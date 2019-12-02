@@ -1,0 +1,19 @@
+<h1>User List</h1>
+
+<mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{user.firstName | lowercase}} - {{user.lastName | uppercase }}</mat-card-title>
+          <mat-card-subtitle>{{user.birthDate | date:'dd/MM/yyyy hh:mm'}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://avatars.servers.getgo.com/emails/%7B0%7D/medium.jpg" alt="Photo of Shutgun User">
+        <mat-card-content>
+          <p>Phone Number: {{user.phoneNumber | uppercase}}</p>
+          <p>Drivers License: {{user.driversLicense | lowercase}}</p>
+          <p>Location of Education: {{user.locationOfEducation | uppercase}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>DELETE</button>
+        </mat-card-actions>
+      </mat-card>

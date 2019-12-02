@@ -1,0 +1,38 @@
+<p>find-a-lift works!</p>
+
+<!-- <input type="text" [(ngModel)]="searchInput"> -->
+<mat-form-field class="search-box">
+    <input matInput type="text" placeholder="Search.." [(ngModel)]="value" [(ngModel)]="searchInput">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+  
+
+<div *ngFor="let tripObject of lifts | filterLift: searchInput" class="lift-container"> 
+  <app-trip-lift (tripDeleteEmitter)="onDeleteLift($event)" [trip]="tripObject"></app-trip-lift>
+</div> 
+
+<!-- <div *ngFor="let trip of dataService.tempData" class="lift-container"> 
+        <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{trip.origin}} - {{trip.destination}}</mat-card-title>
+                  <mat-card-subtitle>{{trip.departureTime | date:'dd/MM/yyyy hh:mm'}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                  <p>
+                    {{trip.owner.firstName}} {{trip.owner.lastName}} has {{trip.availableSeats}} available seats
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button (click)="onDeleteLift(trip._id)" class="deleteButton">DELETE</button>
+                </mat-card-actions>
+              </mat-card>
+</div> -->
+
+<button (click)="onTestClick()">Don't click me</button>
+{{isLift}}
+    
