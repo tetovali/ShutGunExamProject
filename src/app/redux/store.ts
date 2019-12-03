@@ -6,7 +6,7 @@ import { tripsReducer } from './trips.reducer';
 export class TripState {
   isLift: boolean;
   lifts: Trip[];
-  
+  isLoading: boolean;
 }
 export class AppState {
   trips?: TripState;

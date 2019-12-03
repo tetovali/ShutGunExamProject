@@ -1,3 +1,4 @@
+import { FilterUser } from './user-list/user-list.filter';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -56,7 +57,7 @@ import { UserListComponent } from './user-list/user-list.component';
     RegisterATripComponent,
     UserAdminComponent,
     TripLiftComponent,
-    FilterLift,
+    FilterLift, FilterUser,
     ProfileComponent,
     SettingsComponent,
     TripsListComponent,

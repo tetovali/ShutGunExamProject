@@ -1,5 +1,6 @@
 import { ApiService } from './api.service';
 import { Component, OnInit } from '@angular/core';
+import { LiftActions } from './find-a-lift/lift-actions';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'shotgun';
+  title: string = 'shotgun';
 
-  constructor( private api: ApiService) {  }
+  constructor( private liftActions: LiftActions) {  }
 
   ngOnInit(): void {
-    
+    //this.liftActions.getTrips();
+    // wapi bağlantısı sağlıyor.
   }
 }

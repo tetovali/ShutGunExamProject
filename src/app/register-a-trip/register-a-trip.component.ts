@@ -7,6 +7,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Trip } from './../entities/trip';
+import { NgRedux } from '@angular-redux/store';
+import { AppState } from '../redux/store';
 
 @Component({
   selector: 'app-register-a-trip',
@@ -16,9 +18,10 @@ import { Trip } from './../entities/trip';
 export class RegisterATripComponent implements OnInit {
 
   registerTripForm: FormGroup;
+  public isLoading: boolean;
 
-  constructor(private fb: FormBuilder, private router: Router, private auth: AuthGuard, private data: DataService,
-    private authService: AuthService, private liftActions: LiftActions) { }
+  constructor(private fb: FormBuilder, private router: Router, private data: DataService,
+    private auth: AuthService, private liftActions: LiftActions, private ngRedux: NgRedux<AppState>) { }
 
   ngOnInit() {
     this.registerTripForm = this.fb.group({
@@ -26,7 +29,11 @@ export class RegisterATripComponent implements OnInit {
       "destination": ['', Validators.required],
       "availableSeats": ['', Validators.required],
       "departureTime": ['', Validators.required]
-    })
+    });
+
+    this.ngRedux.select(x => x.trips).subscribe(state => {
+      this.isLoading = state.isLoading;
+    });
   }
 
   public onRegisterTripClick() : void {
@@ -37,7 +44,8 @@ export class RegisterATripComponent implements OnInit {
       trip.owner = this.auth.loggedInUser;
 
       // this.data.addTrip(trip);
-      this.router.navigate(['/portal/findalift'])
+      //this.router.navigate(['/portal/findalift']);
+      this.liftActions.createTrip(trip);
 
     }else{
       console.log("Can't. Must fix form errors first.")

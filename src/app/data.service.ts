@@ -30,6 +30,42 @@ export class DataService {
 
   ]; 
 
+  tempUser: User[] = [
+    { _id: '1a',
+      firstName: 'Emir',
+      lastName: 'Kalkan',
+      email: 'em@ka.com',
+      password: 'asd',
+      city: 'İstanbul',
+      birthDate: new Date(1997, 3, 11),
+      phoneNumber: 905392673453,
+      driversLicense: 1234,
+      locationOfEducation: 'Copenhagen' },
+
+      { _id: '1b',
+      firstName: 'Ekin',
+      lastName: 'Yavaşca',
+      email: 'ek@ya.com',
+      password: 'asddfgh',
+      city: 'Berlin',
+      birthDate: new Date(1997, 7, 8),
+      phoneNumber: 905456765443,
+      driversLicense: 45677,
+      locationOfEducation: 'İstanbul' },  
+
+      { _id: '1c',
+      firstName: 'Ozi',
+      lastName: 'Altunseçen',
+      email: 'o@a.com',
+      password: 'deflmrglmf',
+      city: 'Balıkesir',
+      birthDate: new Date(1997, 6, 1),
+      phoneNumber: 904567654353,
+      driversLicense: 45676,
+      locationOfEducation: 'Istanbul' },
+
+  ];
+
 
   constructor() { }
 

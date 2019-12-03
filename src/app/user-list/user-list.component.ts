@@ -1,5 +1,6 @@
 import { User } from './../entities/user';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-user-list',
@@ -8,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  user: User;
+  value = 'Clear me';
 
-  constructor() { }
+  users: User[];
+
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.users= this.data.tempUser;
   }
 
 }

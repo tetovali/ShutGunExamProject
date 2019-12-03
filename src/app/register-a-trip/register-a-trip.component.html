@@ -29,9 +29,7 @@
             </mat-error>  
         </mat-form-field> 
       
-        <button mat-raised-button color="primary" id="registeratrip">Register A Trip</button>
+        <button mat-raised-button color="primary" id="registeratrip" [disabled]="isLoading">Register A Trip</button>
       
       </form>
-
-      <router-outlet></router-outlet>
       
