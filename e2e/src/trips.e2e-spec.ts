@@ -55,6 +55,31 @@ describe('Trip tests', () => {
 
         });
 
+        it('should test that register admin works', () => {
+            browser.get('');
+            element(by.id('home')).click();
+            element(by.id('home-register')).click();
+            browser.sleep(2000);
+            expect(element(by.css('h1')).getText()).toEqual('Home');
+            element(by.id('firstname-input')).sendKeys('admin');
+            element(by.id('lastname-input')).sendKeys('kalkan');
+            element(by.id('email-input')).sendKeys('e@e.com');
+            element(by.id('password-input')).sendKeys('password123');
+            element(by.id('city-input')).sendKeys('istanbul');
+            element(by.id('phoneNumber-input')).sendKeys('+905392675375');
+            element(by.id('birthDate-input')).sendKeys('11/04/1997');
+            element(by.id('driversLicense-input')).sendKeys('1234');
+            element(by.id('locationOfEducation-input')).sendKeys('Copenhagen');
+            browser.sleep(2000);
+            element(by.id('register-button')).click();
+            expect(element(by.css('h1')).getText()).toEqual('Admin Portal');
+            element(by.id('adminprofile-button')).click();
+            expect(element(by.css('h2')).getText()).toEqual('Admin Profile');
+     
+            expect(true).toBeTruthy();
+
+        });
+
         it('should test the total quantity of user works', () => {
             browser.get('');
             element(by.id('home')).click();
@@ -66,7 +91,7 @@ describe('Trip tests', () => {
             browser.sleep(2000);
             element.all(by.css('.example-card')).then(function(el) {
                 const before = el.length; //eg before = 3
-                    expect(before).toEqual(3);
+                    expect(before).toEqual(4);
                 });    
         });
 

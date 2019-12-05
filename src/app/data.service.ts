@@ -12,28 +12,28 @@ export class DataService {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019,0,1,8,0,0), 
-    owner: {_id: '21', firstName: 'Emir'} as User },
+    owner: {_id: '21', firstname: 'Emir'} as User },
 
     {_id: '2', 
     origin: 'Hillerød', 
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ), 
-    owner: {_id: '1', firstName: 'Christian'} as User },
+    owner: {_id: '1', firstname: 'Christian'} as User },
 
     {_id: '3', 
     origin: 'Roskilde', 
     destination: 'Copenhagen', 
     availableSeats: 3, 
     departureTime: new Date(2019, 1, 2, 9, 0,0 ), 
-    owner: {_id: '2', firstName: 'Ozi'} as User }
+    owner: {_id: '2', firstname: 'Ozi'} as User }
 
   ]; 
 
   tempUser: User[] = [
     { _id: '1a',
-      firstName: 'Emir',
-      lastName: 'Kalkan',
+      firstname: 'Emir',
+      lastname: 'Kalkan',
       email: 'em@ka.com',
       password: 'asd',
       city: 'İstanbul',
@@ -43,8 +43,8 @@ export class DataService {
       locationOfEducation: 'Copenhagen' },
 
       { _id: '1b',
-      firstName: 'Ekin',
-      lastName: 'Yavaşca',
+      firstname: 'Ekin',
+      lastname: 'Yavaşca',
       email: 'ek@ya.com',
       password: 'asddfgh',
       city: 'Berlin',
@@ -54,8 +54,8 @@ export class DataService {
       locationOfEducation: 'İstanbul' },  
 
       { _id: '1c',
-      firstName: 'Ozi',
-      lastName: 'Altunseçen',
+      firstname: 'Ozi',
+      lastname: 'Altunseçen',
       email: 'o@a.com',
       password: 'deflmrglmf',
       city: 'Balıkesir',

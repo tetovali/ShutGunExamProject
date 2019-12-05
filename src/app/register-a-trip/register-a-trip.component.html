@@ -2,34 +2,33 @@
 
 <form [formGroup]="registerTripForm" class="example-form" (ngSubmit) = "onRegisterTripClick()">
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Origin" formControlName="origin"> 
+            <input matInput placeholder="Origin" formControlName="origin" required> 
             <mat-error>
                 Please provide origin
             </mat-error>      
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Destination" formControlName="destination">
+          <input matInput placeholder="Destination" formControlName="destination" required>
           <mat-error>
                 Please provide destination
           </mat-error>  
         </mat-form-field> 
 
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Available Seats" type="number" formControlName="availableSeats">
+            <input matInput placeholder="Available Seats" type="number" formControlName="availableSeats" required>
             <mat-error>
                         Please provide available seats
             </mat-error>  
         </mat-form-field> 
 
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Departure Date/Time" formControlName="departureTime" type="datetime-local">
+            <input matInput placeholder="Departure Date/Time" formControlName="departureTime" type="datetime-local" required>
             <mat-error>
                     Please provide departure time
             </mat-error>  
         </mat-form-field> 
       
-        <button mat-raised-button color="primary" id="registeratrip" [disabled]="isLoading">Register A Trip</button>
-      
-      </form>
+        <button mat-raised-button color="primary" id="registeratrip" [disabled]="isLoading">Register A Trip</button> 
+</form>
       

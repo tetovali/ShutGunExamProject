@@ -9,7 +9,7 @@ import { User } from '../entities/user';
 })
 export class AuthService {
   isLoggedIn = false;
-  loggedInUser: User = {_id: '1', firstName:'Emir', lastName:'Kalkan'} as User;
+  loggedInUser: User = {_id: '1', firstname:'Emir', lastname:'Kalkan'} as User;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;

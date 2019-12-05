@@ -5,12 +5,16 @@
         <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
           <mat-icon>close</mat-icon>
         </button>
-    </mat-form-field>
+</mat-form-field> 
 
-<mat-card *ngFor="let user of users | filterUsers: searchInput" class="example-card">
+<div *ngFor="let user of users | filterUsers: searchInput" class="lift-container"> 
+  <app-user [userInput]="user" (userClicked)="onUserClick($event)"></app-user>
+</div>   
+
+<!-- <mat-card *ngFor="let user of users | filterUsers: searchInput" class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{user.firstName | lowercase}} {{user.lastName | uppercase}}</mat-card-title>
+          <mat-card-title>{{user.firstname | lowercase}} {{user.lastname | uppercase}}</mat-card-title>
           <mat-card-subtitle>{{user.birthDate | date:'dd/MM/yyyy'}}</mat-card-subtitle>
           <mat-card-subtitle>{{user.city | uppercase}}</mat-card-subtitle>
         </mat-card-header>
@@ -27,4 +31,4 @@
           <button mat-button>LIKE</button>
           <button mat-button>DELETE</button>
         </mat-card-actions>
-</mat-card>
+</mat-card>    -->

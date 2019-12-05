@@ -54,7 +54,7 @@ describe('Lift Filter', () => {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-    owner: {_id: '1', firstName: 'Christian'} as User}];
+    owner: {_id: '1', firstname: 'Christian'} as User}];
 
     const search = 'Copenhagen';
     const expectedResult = [{_id: '2', 
@@ -62,7 +62,7 @@ describe('Lift Filter', () => {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-    owner: {_id: '1', firstName: 'Christian'} as User}];
+    owner: {_id: '1', firstname: 'Christian'} as User}];
     //Act
     const result = filter.transform(data, search);
     //Assert
@@ -78,7 +78,7 @@ describe('Lift Filter', () => {
      destination: 'Copenhagen', 
      availableSeats: 4, 
      departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-     owner: {_id: '1', firstName: 'Christian'} as User}];
+     owner: {_id: '1', firstname: 'Christian'} as User}];
 
      const search = 'Hillerød';
      const expectedResult = [{_id: '2', 
@@ -86,7 +86,7 @@ describe('Lift Filter', () => {
      destination: 'Copenhagen', 
      availableSeats: 4, 
      departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-     owner: {_id: '1', firstName: 'Christian'} as User}];
+     owner: {_id: '1', firstname: 'Christian'} as User}];
      //Act
      const result = filter.transform(data, search);
      //Assert
@@ -102,7 +102,7 @@ describe('Lift Filter', () => {
      destination: 'Copenhagen', 
      availableSeats: 4, 
      departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-     owner: {_id: '1', firstName: 'Christian'} as User}];
+     owner: {_id: '1', firstname: 'Christian'} as User}];
 
      const search = 4;
      const expectedResult = [{_id: '2', 
@@ -110,7 +110,7 @@ describe('Lift Filter', () => {
      destination: 'Copenhagen', 
      availableSeats: 4, 
      departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-     owner: {_id: '1', firstName: 'Christian'} as User}];
+     owner: {_id: '1', firstname: 'Christian'} as User}];
      //Act
      const result = filter.transform(data, search);
      //Assert
@@ -126,7 +126,7 @@ describe('Lift Filter', () => {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-    owner: {_id: '1', firstName: 'Christian'} as User}];
+    owner: {_id: '1', firstname: 'Christian'} as User}];
 
     const search = 'Emir';
     const expectedResult = [];
@@ -145,7 +145,7 @@ describe('Lift Filter', () => {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-    owner: {_id: '1', firstName: 'Christian'} as User}];
+    owner: {_id: '1', firstname: 'Christian'} as User}];
 
     const search = undefined;
     const expectedResult = [{_id: '2', 
@@ -153,7 +153,7 @@ describe('Lift Filter', () => {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-    owner: {_id: '1', firstName: 'Christian'} as User}];
+    owner: {_id: '1', firstname: 'Christian'} as User}];
     //Act
     const result = filter.transform(data, search);
     //Assert
@@ -167,7 +167,7 @@ describe('Lift Filter', () => {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-    owner: {_id: '1', firstName: 'Christian'} as User}];
+    owner: {_id: '1', firstname: 'Christian'} as User}];
  
     const search = '';
     const expectedResult = [{_id: '2', 
@@ -175,7 +175,7 @@ describe('Lift Filter', () => {
     destination: 'Copenhagen', 
     availableSeats: 4, 
     departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-    owner: {_id: '1', firstName: 'Christian'} as User}];
+    owner: {_id: '1', firstname: 'Christian'} as User}];
     //Act
     const result = filter.transform(data, search);
     //Assert
@@ -189,7 +189,7 @@ describe('Lift Filter', () => {
    destination: undefined, 
    availableSeats: 4, 
    departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-   owner: {_id: '1', firstName: 'Christian'} as User}];
+   owner: {_id: '1', firstname: 'Christian'} as User}];
 
    const search = 'Copenhagen';
    const expectedResult = [];
@@ -206,7 +206,7 @@ describe('Lift Filter', () => {
    destination: undefined, 
    availableSeats: 4, 
    departureTime: new Date(2019, 1, 1, 8, 0,0 ),
-   owner: {_id: '1', firstName: 'Christian'} as User}];
+   owner: {_id: '1', firstname: 'Christian'} as User}];
 
    const search = -4;
    const expectedResult = [];

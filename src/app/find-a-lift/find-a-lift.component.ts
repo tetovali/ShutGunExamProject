@@ -1,6 +1,6 @@
 import { DataService } from './../data.service';
 import { Trip } from './../entities/trip';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LiftActions } from './lift-actions';
 import { NgRedux } from '@angular-redux/store';
 import { AppState } from '../redux/store';

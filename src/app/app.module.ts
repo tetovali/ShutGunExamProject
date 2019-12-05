@@ -40,6 +40,8 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 import { MatIconModule}  from '@angular/material/icon';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserComponent } from './user/user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 
@@ -68,7 +70,9 @@ import { UserListComponent } from './user-list/user-list.component';
     AdminSettingsComponent,
     AdminProfileComponent,
     AdminPortalComponent,
-    UserListComponent
+    UserListComponent,
+    UserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

@@ -10,10 +10,11 @@ import { LiftActions } from './find-a-lift/lift-actions';
 export class AppComponent implements OnInit{
   title: string = 'shotgun';
 
-  constructor( private liftActions: LiftActions) {  }
+  constructor( private liftActions: LiftActions, private apiService: ApiService) {  }
 
   ngOnInit(): void {
     //this.liftActions.getTrips();
     // wapi bağlantısı sağlıyor.
+    //this.apiService.getAllUsers();
   }
 }

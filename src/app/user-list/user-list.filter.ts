@@ -15,9 +15,9 @@ export class FilterUser implements PipeTransform {
 
         search = search.toLowerCase();
 
-        return items.filter(user => user.firstName && user.firstName.toLowerCase().includes(search) || 
+        return items.filter(user => user.firstname && user.firstname.toLowerCase().includes(search) || 
         user.city && user.city.toLowerCase().includes(search) || 
-        user.lastName && user.lastName.toLowerCase().includes(search) ||
+        user.lastname && user.lastname.toLowerCase().includes(search) ||
         user.locationOfEducation && user.locationOfEducation.toLowerCase().includes(search));
      }
 }

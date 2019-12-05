@@ -1,0 +1,86 @@
+ <h1 class="header">Update User</h1> 
+ 
+<form [formGroup]="updateForm" class="example-form" (ngSubmit) = "onUpdateClick()">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Firstname" formControlName="firstname" id="firstname-input" required>
+
+        <mat-error *ngIf="updateForm.controls.firstname.hasError('required')">
+            Please enter a valid username
+        </mat-error>
+        
+        <mat-error *ngIf="updateForm.controls.firstname.hasError('minlength')">
+            Username must be at least 3 characters
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Lastname" formControlName="lastname" id="lastname-input"required> 
+
+        <mat-error *ngIf="updateForm.controls.lastname.hasError('required')">
+            Please enter a valid lastname
+        </mat-error>       
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" formControlName="email" ngModel email="true" id="email-input" required> 
+    
+        <mat-error *ngIf="updateForm.controls.email.hasError('required')">
+            Please enter a valid email
+        </mat-error>
+
+        <mat-error *ngIf="updateForm.controls.email.hasError('email')">
+            Please enter a email in correct form
+        </mat-error>
+    </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" type="password" formControlName="password" id="password-input" required>
+
+        <mat-error *ngIf="updateForm.controls.password.hasError('required')">
+            Please enter a valid password
+        </mat-error>
+    </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="City" formControlName="city" id="city-input" required> 
+
+        <mat-error *ngIf="updateForm.controls.city.hasError('required')">
+            Please enter a valid city
+        </mat-error>
+    </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="PhoneNumber (Ex: +905392675375)" type="tel" pattern="\+[0-9]{2}[0-9]{10}" formControlName="phoneNumber"  id="phoneNumber-input"required> 
+
+        <mat-error *ngIf="updateForm.controls.phoneNumber.hasError('required')">
+            Please enter a valid phone number
+        </mat-error>
+    </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Birth Date" formControlName="birthDate" id="birthDate-input" [matDatepicker]="picker" [min]="minDate" [max]="maxDate" required> 
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="updateForm.controls.birthDate.hasError('required')">
+            Please enter a valid birth date
+        </mat-error>
+    </mat-form-field>   
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Driver's License" formControlName="driversLicense" id="driversLicense-input"> 
+    </mat-form-field>   
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Location of Education" formControlName="locationOfEducation" id="locationOfEducation-input" required> 
+
+        <mat-error *ngIf="updateForm.controls.firstname.hasError('required')">
+            Please enter a valid location
+        </mat-error>
+    </mat-form-field> 
+
+    <button mat-raised-button color="primary" id="updateuser-button">Update</button>
+    <button mat-raised-button color="primary" type="reset">Reset</button>
+
+</form>
+

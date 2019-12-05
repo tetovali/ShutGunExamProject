@@ -1,8 +1,10 @@
+import { User } from './../entities/user';
 import { AuthService } from './../auth/auth.service';
 import { AdminService } from './../admin/admin.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +18,8 @@ export class RegisterComponent implements OnInit {
   minDate = new Date(1920, 0, 1);
   maxDate = new Date(2001, 11, 31);
 
-  constructor(private fb: FormBuilder, private router: Router, private admin: AdminService, private auth: AuthService) { }
+  constructor(private fb: FormBuilder, private router: Router, private admin: AdminService, private auth: AuthService,
+    private apiService: ApiService) { }
 
   ngOnInit() {
     this.registerForm = this.fb.group({
@@ -29,7 +32,7 @@ export class RegisterComponent implements OnInit {
       "phoneNumber": ['', Validators.required],
       "driversLicense": [''],
       "locationOfEducation": ['', [Validators.required]] 
-    })
+    });
   }
 
   public onRegisterClick()  : void {
@@ -38,16 +41,19 @@ export class RegisterComponent implements OnInit {
     //If this form is valid, then call the server.
     if(this.registerForm.valid) {
       //Then call the server
-      if (this.registerForm.value.firstname === "admin") {
-        this.admin.login().subscribe(result => {
-          this.router.navigate(['adminportal']);  
-        }); 
-      } else {
-        this.auth.login().subscribe(result => {
-          this.router.navigate(['home/login'])  
-        });  
-      }
-      
+      let user = this.registerForm.value as User;
+      this.apiService.createUser(user).subscribe(( userObject: User) => {
+        if (this.registerForm.value.firstname === "admin") {
+          this.admin.login().subscribe(result => {
+            this.router.navigate(['adminportal']);  
+          }); 
+        } else {
+          this.auth.login().subscribe(result => {
+            this.router.navigate(['home/login'])  
+          });  
+        }
+      });
+      console.log("Hi. Hello World!");
     } else {
       console.log("Can't. Must fix form errors first");
     }

@@ -25,7 +25,7 @@ export class FilterLift implements PipeTransform {
             search = search.toLowerCase();
             return items.filter(trip => trip.destination && trip.destination.toLowerCase().includes(search) || 
             trip.origin && trip.origin.toLowerCase().includes(search) || 
-            trip.owner.firstName && trip.owner.firstName.toLowerCase().includes(search));
+            trip.owner.firstname && trip.owner.firstname.toLowerCase().includes(search));
         }
     
         

@@ -49,8 +49,8 @@ describe('User Filter', () => {
     //const filter = new FilterLift();
     // const data = [{id: '123', destination: 'Copenhagen'}]
     const data = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -62,8 +62,8 @@ describe('User Filter', () => {
     const search = 'Emir';
 
     const expectedResult = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -82,8 +82,8 @@ describe('User Filter', () => {
      //const filter = new FilterLift();
 
      const data = [{ _id: '1a',
-     firstName: 'Emir',
-     lastName: 'Kalkan',
+     firstname: 'Emir',
+     lastname: 'Kalkan',
      email: 'em@ka.com',
      password: 'asd',
      city: 'İstanbul',
@@ -95,8 +95,8 @@ describe('User Filter', () => {
      const search = 'Kalkan';
 
      const expectedResult = [{ _id: '1a',
-     firstName: 'Emir',
-     lastName: 'Kalkan',
+     firstname: 'Emir',
+     lastname: 'Kalkan',
      email: 'em@ka.com',
      password: 'asd',
      city: 'İstanbul',
@@ -115,8 +115,8 @@ describe('User Filter', () => {
      //const filter = new FilterLift();
      // const data = [{id: '123', destination: 'Copenhagen'}]
      const data = [{ _id: '1a',
-     firstName: 'Emir',
-     lastName: 'Kalkan',
+     firstname: 'Emir',
+     lastname: 'Kalkan',
      email: 'em@ka.com',
      password: 'asd',
      city: 'İstanbul',
@@ -128,8 +128,8 @@ describe('User Filter', () => {
      const search = 'İstanbul';
 
      const expectedResult = [{ _id: '1a',
-     firstName: 'Emir',
-     lastName: 'Kalkan',
+     firstname: 'Emir',
+     lastname: 'Kalkan',
      email: 'em@ka.com',
      password: 'asd',
      city: 'İstanbul',
@@ -148,8 +148,8 @@ describe('User Filter', () => {
     //const filter = new FilterLift();
     // const data = [{id: '123', destination: 'Copenhagen'}]
     const data = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -161,8 +161,8 @@ describe('User Filter', () => {
     const search = 'Copenhagen';
 
     const expectedResult = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -181,8 +181,8 @@ describe('User Filter', () => {
     //const filter = new FilterLift();
     // const data = [{id: '123', destination: 'Copenhagen'}]
     const data = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -204,8 +204,8 @@ describe('User Filter', () => {
     //const filter = new FilterLift();
     // const data = [{id: '123', destination: 'Copenhagen'}]
     const data = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -216,8 +216,8 @@ describe('User Filter', () => {
 
     const search = undefined;
     const expectedResult = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -234,8 +234,8 @@ describe('User Filter', () => {
    it('2.2: Return all users when search is empty string', () => {
      //Arrange
     const data = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -246,8 +246,8 @@ describe('User Filter', () => {
  
     const search = '';
     const expectedResult = [{ _id: '1a',
-    firstName: 'Emir',
-    lastName: 'Kalkan',
+    firstname: 'Emir',
+    lastname: 'Kalkan',
     email: 'em@ka.com',
     password: 'asd',
     city: 'İstanbul',
@@ -264,8 +264,8 @@ describe('User Filter', () => {
    it('3.0: Search for firstname but the data does not contain firstname', () => {
     //Arrange
    const data = [{ _id: '1a',
-   firstName: undefined,
-   lastName: 'Kalkan',
+   firstname: undefined,
+   lastname: 'Kalkan',
    email: 'em@ka.com',
    password: 'asd',
    city: 'İstanbul',

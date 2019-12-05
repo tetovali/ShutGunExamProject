@@ -1,3 +1,4 @@
+import { UpdateUserComponent } from './update-user/update-user.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AdminPortalComponent } from './admin-portal/admin-portal.component';
 import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
@@ -44,7 +45,9 @@ const routes: Routes = [
   { path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
     { path: 'findalift', component: FindALiftComponent},
     { path: 'registeratrip', component: RegisterATripComponent},
-    { path: 'userlist', component: UserListComponent},
+    { path: 'userlist', component: UserListComponent, children: [
+      { path: 'updateuser', component: UpdateUserComponent},
+    ]},
     { path: 'profile', component: ProfileComponent, children: [
       { path: 'settings', component: SettingsComponent, children: [
         { path: 'receivedpoints', component: ReceivedPointsComponent},
