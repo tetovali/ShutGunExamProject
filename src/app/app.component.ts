@@ -1,3 +1,4 @@
+import { UserActions } from './user-list/user-actions';
 import { ApiService } from './api.service';
 import { Component, OnInit } from '@angular/core';
 import { LiftActions } from './find-a-lift/lift-actions';
@@ -10,11 +11,11 @@ import { LiftActions } from './find-a-lift/lift-actions';
 export class AppComponent implements OnInit{
   title: string = 'shotgun';
 
-  constructor( private liftActions: LiftActions, private apiService: ApiService) {  }
+  constructor( private liftActions: LiftActions, private apiService: ApiService, private userActions: UserActions) {  }
 
   ngOnInit(): void {
     //this.liftActions.getTrips();
     // wapi bağlantısı sağlıyor.
-    //this.apiService.getAllUsers();
+    this.userActions.getUsers();
   }
 }
